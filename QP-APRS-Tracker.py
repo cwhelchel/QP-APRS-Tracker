@@ -47,7 +47,7 @@ geofilter = b"#filter a/35.031894/-85.735580/30.077116/-80.484568"
 # ga box: 35.031894/-85.735580/30.077116/-80.484568
 
 # regex search string for APRS packets participating in QSO Party
-qpstring = "GATEST"
+qpstring = "GAQP|GQP"
 
 # directory for www HTML files
 wwwdir = "www/"

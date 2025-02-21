@@ -13,14 +13,20 @@ let config = {
 const zoom = 7.3;
 
 // coordinates where the map will center
-const lat = 38;
-const lng = -79.5;
+const lat = 32;
+const lng = -83.0;
+
+// add lat/long pairs as constants [cmw]
+const northLL = [35,-84];
+const centralLL = [32.5,-83.5];
+const southEastLL = [32,-82];
+const southWestLL = [32,-85];
 
 // coordinates for centering and zooming on state map
-var nva = new L.Marker([39,-77]);
-var seva = new L.Marker([38,-76]);
-var swva = new L.Marker([38,-80]);
-var cva = new L.Marker([38,-78]);
+var nva = new L.Marker(northLL);
+var seva = new L.Marker(southEastLL);
+var swva = new L.Marker(southWestLL);
+var cva = new L.Marker(centralLL);
 
 
 // calling map
@@ -71,8 +77,8 @@ const nvaControl = L.Control.extend({
   onAdd: function (map) {
     // create button
     const btn = L.DomUtil.create("button");
-    btn.title = "Zoom N. Va";
-    btn.innerHTML = "N Va";
+    btn.title = "Zoom N.";
+    btn.innerHTML = "N";
     btn.className += "leaflet-bar to-nva";
 
     return btn;
@@ -89,8 +95,8 @@ const cvaControl = L.Control.extend({
   onAdd: function (map) {
     // create button
     const btn = L.DomUtil.create("button");
-    btn.title = "Zoom Cen. Va";
-    btn.innerHTML = "C Va";
+    btn.title = "Zoom Central";
+    btn.innerHTML = "Cen";
     btn.className += "leaflet-bar to-cva";
 
     return btn;
@@ -107,8 +113,8 @@ const sevaControl = L.Control.extend({
   onAdd: function (map) {
     // create button
     const btn = L.DomUtil.create("button");
-    btn.title = "Zoom S.E. Va";
-    btn.innerHTML = "SE Va";
+    btn.title = "Zoom S.E.";
+    btn.innerHTML = "SE";
     btn.className += "leaflet-bar to-seva";
 
     return btn;
@@ -125,8 +131,8 @@ const swvaControl = L.Control.extend({
   onAdd: function (map) {
     // create button
     const btn = L.DomUtil.create("button");
-    btn.title = "Zoom S.W. Va";
-    btn.innerHTML = "SW Va";
+    btn.title = "Zoom S.W.";
+    btn.innerHTML = "SW";
     btn.className += "leaflet-bar to-swva";
 
     return btn;
@@ -162,19 +168,19 @@ buttonBackToHome.addEventListener("click", () => {
 });
 
 buttonNVa.addEventListener("click", () => {
-  map.flyTo([38.6,-78.25], 8.75);
+  map.flyTo(northLL, 8.75);
 });
 
 buttonCVa.addEventListener("click", () => {
-  map.flyTo([37.35,-78.5], 8.75);
+  map.flyTo(centralLL, 8.75);
 });
 
 buttonSEVa.addEventListener("click", () => {
-  map.flyTo([37.35,-76.75], 8.75);
+  map.flyTo(southEastLL, 8.75);
 });
 
 buttonSWVa.addEventListener("click", () => {
-  map.flyTo([37.5,-81.8], 8.5);
+  map.flyTo(southWestLL, 8.5);
 });
 
 

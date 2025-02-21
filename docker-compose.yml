@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  app:
+    image: qpaprstracker:latest
+    volumes:
+      - public:/app/www
+
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - 7373:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      # share files from web
+      - public:/static:ro
+
+volumes:
+  public:

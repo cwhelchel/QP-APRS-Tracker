@@ -35,6 +35,16 @@ ul {
   list-style-type: none;
 }
 
+ul.notes {
+    list-style: circle;
+}
+
+ul.notes > li {
+    font-size: 14px;
+    margin-left: 10px;
+    list-style-type: circle;
+}
+
 label {
   display: flex;
   align-items: center;
@@ -213,21 +223,25 @@ table, th, td {
     font-size: 12px;
 }
 
+#t1 {
+    margin: 0 auto;
+}
+
 .layout {
   width: 1200px;
   height: 800px;
-
+  margin: 0 auto;
   display: grid;
     grid:
-      "header header header" 5%
-      "leftSide body rightSide" 90%
-      "footer footer footer" 5%
-      / 15% 80% 5%;
+      "header header" 6%
+      "leftSide body" 90%
+      "footer footer" 4%
+      / 20% 80%;
     gap: 8px;
   }
 
   .header { grid-area: header; }
-  .leftSide { grid-area: leftSide; }
+  .leftSide { grid-area: leftSide; margin-left: 5px; }
   .body { grid-area: map; }
   .rightSide { grid-area: rightSide; }
   .footer { grid-area: footer; }
