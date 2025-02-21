@@ -2,9 +2,10 @@ version: "3.7"
 
 services:
   app:
-    image: qpaprstracker:latest
+    image: gaqptracker:latest
     volumes:
       - public:/app/www
+      - ./qp-calls.txt:/app/qp-calls.txt
 
   nginx:
     image: nginx:stable-alpine
