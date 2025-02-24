@@ -17,10 +17,10 @@ const lat = 32;
 const lng = -83.0;
 
 // add lat/long pairs as constants [cmw]
-const northLL = [35,-84];
+const northLL = [34.5,-84];
 const centralLL = [32.5,-83.5];
 const southEastLL = [32,-82];
-const southWestLL = [32,-85];
+const southWestLL = [32,-84];
 
 // coordinates for centering and zooming on state map
 var nva = new L.Marker(northLL);
