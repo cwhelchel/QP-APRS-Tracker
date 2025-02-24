@@ -343,7 +343,7 @@ window["non-qso-party"].on('click', function() {
 /* Parse CSV file into Table form*/
 var init;
 const logFileText = async file => {
-    const response = await fetch(file);
+    const response = await fetch(file + '?_=' + Date.now(), {cache:"no-store"});
     const text = await response.text();
     all = text.split('\n');
         init = all.length;
