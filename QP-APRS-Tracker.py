@@ -576,6 +576,9 @@ class APRSGeoDetector(Thread):
                         self.writeCSV(self.db)
                         # self.log("Updated CSV")
 
+                        # do same up date to geojson files [cmw]
+                        self.writeJSON(self.db)
+
                     if self.wdCheck(1):
                         self.log("Timeout waiting for APRS data, re-writing data")
                         with self.lock:
@@ -1040,7 +1043,7 @@ class APRSGeoDetector(Thread):
 
             print(f"{datetime.datetime.now():%m-%d-%Y,%H%M,GMT,SPOT}", file=f)
 
-            print("QP CALL", "C&IC", "AGE", "AGE", sep=',', file=f)
+            print("QP CALL", "CNTY", "TIC", "AGE", sep=',', file=f)
 
             now = int(time.time())
 

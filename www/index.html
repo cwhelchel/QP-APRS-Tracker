@@ -47,17 +47,22 @@
 
           <div class="leftSide"><h3 style="text-align: center;">QP Mini Tracker</h3>
             <!-- this is the mini table element -->
-            <p><table id="t1"></table></br></p>
+            <table id="t1"></table></br>
+            <p  style="text-align: center;" >Updates = every 30 secs.</p>
+            
             <p>
-                Table shows only QP calls and their C&IC, time in county and
-                beacon/spot age in minutes.</br>
-                <ul class="notes">
-                    <li><strong>Bold call</strong> = new C&IC</li>
-                    <li>Add <strong>GAQP</strong> to your <strong>APRS Beacon</strong> message to participate.</li>
-                    <li>Updates = every 30 secs.</li>
-                </ul>
+                Table shows GAQP calls, their CNTY abbr, time in county (TIC), and
+                last beacon age in minutes.
             </p>
-          
+            <ul class="notes">
+                <li><strong>Bold</strong> <= 30 mins in CNTY</li>
+                <li>Green spot <= 1 hr. old</li>
+                <li>Yellow spot <= 2 hr. old</li>
+                <li>Pink spot <= 3 hr. old</li>
+                <li>Red spot <= 4 hr. old</li>
+            </ul>
+            
+            <p>Add <b>GAQP</b> or <b>GQP</b> to your APRS Beacon message to participate.</p>
           </div>
 
 <!--          <div class="marker-position">Click or Zoom map (30sec. updates)</div>

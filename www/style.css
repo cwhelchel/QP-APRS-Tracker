@@ -225,6 +225,7 @@ table, th, td {
 
 #t1 {
     margin: 0 auto;
+    width: 100%;
 }
 
 .layout {
@@ -246,4 +247,7 @@ table, th, td {
   .rightSide { grid-area: rightSide; }
   .footer { grid-area: footer; }
 
-
+.leftSide > p {
+    margin-bottom: 8px;
+    line-height: 1.15em;
+}
